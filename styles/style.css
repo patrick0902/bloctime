@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+}
+
+td {
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+h3 {
+  color: purple;
+}

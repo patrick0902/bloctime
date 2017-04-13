@@ -24,24 +24,19 @@
                 scope.$watch('STOP_WATCH.totalWorkTime', function () {
                     if (scope.STOP_WATCH.totalWorkTime === 0) {
                         mySound.play();
-                        console.log(mySound);
-                        console.log("im listening");
                     }
                 });
 
                 scope.$watch('STOP_WATCH.totalBreakTime', function () {
                     if (scope.STOP_WATCH.totalBreakTime === 0) {
                         mySound.play();
-                        console.log(mySound);
-                        console.log("im listening");
                     }
                 });
 
                 scope.addTask = function (addedTask) {
                     addedTask = Tasks.all.$add(addedTask);
-                    console.log("task" + addedTask + "entered");
+                    scope.addedTask = null;
                 }
-
 
                 var workCountdown = function () {
                     if (scope.STOP_WATCH.totalWorkTime > 0) {
@@ -56,7 +51,6 @@
                             scope.STOP_WATCH.totalBreakTime = scope.STOP_WATCH.defaultLongBreakTime;
                             scope.breakButton = 'Take Long Break';
                         }
-                        console.log(completedWorkSessions);
                     }
                 };
 
