@@ -1,8 +1,8 @@
 <section class="clock-container">
-<div ng-show="!onBreak === true"> {{ STOP_WATCH.workTime | clockFormat }}
-  <button ng-click="startStopButton(startButton)" ng-show="!onBreak === true">{{ startButton }}</button>
-</div>
-<div ng-hide="onBreak === false"> {{ STOP_WATCH.breakTime | clockFormat }}
-  <button ng-click="takeBreakButton(breakButton)">{{ breakButton }}</button>
-</div>
+    <div ng-show="!onBreak === true"> {{ STOP_WATCH.totalWorkTime | clockFormat }}
+        <button ng-click="startStopButton(startButton)" ng-show="!onBreak === true">{{ startButton }}</button>
+    </div>
+    <div ng-hide="onBreak === false"> {{ STOP_WATCH.totalBreakTime | clockFormat }}
+        <button ng-click="takeBreakButton(breakButton)">{{ breakButton }}</button>
+    </div>
 </section>
