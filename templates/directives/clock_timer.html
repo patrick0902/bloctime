@@ -1,4 +1,8 @@
-<div>
-    {{ defaultClock }}
-    <button ng-click="startStopTimer(startButton)">{{ startButton }}</button><button ng-click="breakTime()">{{ breakButton }}</button>
+<section class="clock-container">
+<div ng-show="!onBreak === true"> {{ STOP_WATCH.workTime | clockFormat }}
+  <button ng-click="startStopButton(startButton)" ng-show="!onBreak === true">{{ startButton }}</button>
 </div>
+<div ng-hide="onBreak === false"> {{ STOP_WATCH.breakTime | clockFormat }}
+  <button ng-click="takeBreakButton(breakButton)">{{ breakButton }}</button>
+</div>
+</section>
