@@ -1,8 +1,13 @@
 <section class="clock-container">
-    <div ng-show="!onBreak === true"> {{ STOP_WATCH.totalWorkTime | clockFormat }}
-        <button ng-click="startStopButton(startButton)" ng-show="!onBreak === true">{{ startButton }}</button>
+    <div class="clock-button" ng-show="!onBreak === true"> {{ STOP_WATCH.totalWorkTime | clockFormat }}
+        <button class="btn" ng-click="startStopButton(startButton)" ng-show="!onBreak === true">{{ startButton }}</button>
     </div>
-    <div ng-hide="onBreak === false"> {{ STOP_WATCH.totalBreakTime | clockFormat }}
-        <button ng-click="takeBreakButton(breakButton)">{{ breakButton }}</button>
+    <div class="clock-button" ng-hide="onBreak === false"> {{ STOP_WATCH.totalBreakTime | clockFormat }}
+        <button class="btn" ng-click="takeBreakButton(breakButton)">{{ breakButton }}</button>
+    </div>
+    <div class="task-board">
+        <h3>Task Board</h3>
+        <span><input class="task-input" type="text" ng-model="addedTask"/><button class="task-button" ng-click="addTask(addedTask)">Add Task</button></span>
+        <h3 ng-repeat="task in tasks">{{ task.$value }}</h3>
     </div>
 </section>
